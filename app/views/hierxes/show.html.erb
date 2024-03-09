@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @hierx %>
+
+<div>
+  <%= link_to "Edit this hierx", edit_hierx_path(@hierx) %> |
+  <%= link_to "Back to hierxes", hierxes_path %>
+
+  <%= button_to "Destroy this hierx", @hierx, method: :delete %>
+</div>

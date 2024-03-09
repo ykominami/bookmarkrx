@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Ys</h1>
+
+<div id="ys">
+  <% @ys.each do |y| %>
+    <%= render y %>
+    <p>
+      <%= link_to "Show this y", y %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New y", new_y_path %>

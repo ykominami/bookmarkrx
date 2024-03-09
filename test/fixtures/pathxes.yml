@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idx: 1
+  path: MyString
+  last_item: MyString
+
+two:
+  idx: 1
+  path: MyString
+  last_item: MyString

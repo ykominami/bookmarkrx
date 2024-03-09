@@ -1,0 +1,133 @@
+<!-- 見出し -->
+<h4 class="fw-bold">
+  <span class="me-1">🐱</span>
+  <span>Pathxes</span>
+</h4>
+<%= link_to("search", "http://127.0.0.1:3000/pathxes/search?q%5Bpath_cont%5D=ETC&q%5Blast_item_cont%5D=&button=&page=3",
+                    data: { turbo_stream: true }) %>
+</p>
+<p>
+<%= link_to("search2", "http://127.0.0.1:3000/pathxes/search?q%5Bpath_cont%5D=ETC&q%5Blast_item_cont%5D=&button=&page=3",
+                    data: { turbo_frame: "pathxs-list2" }) %>
+</p>
+<p>
+<%= link_to("look-10", look2_pathx_path(10),
+                    data: { turbo_stream: true }) %>
+</p>
+
+<!-- 検索フォーム -->
+<div class="card shadow mt-3">
+  <div class="card-header">
+    <%= icon_with_text("search", "検索条件") %>
+  </div>
+
+  <div class="card-body">
+    <%= search_form_for(
+         @q, url: searcha_pathxes_path,
+        html: {
+          method: :post,
+          data: {
+            turbo_frame: "pathxs-list2"
+          }
+       } ) do |f| %>
+      <div class="row g3 mb-3">
+        <div class="col-4 col-xl-2">
+          <%= f.label :path_cont, "Path", class: "form-label" %>
+          <%= f.search_field :path_cont, class: "form-control" %>
+        </div>
+        <div class="col-4 col-xl-2">
+          <%= f.label :last_item_cont, "last_item", class: "form-label" %>
+          <%= f.search_field :last_item_cont, class: "form-control" %>
+        </div>
+         <div class="col-4 d-flex align-items-end">
+          <%= button_tag(icon_with_text("search", "検索"), class: "btn btn-primary me-1") %>
+          <%= link_to "リセット", pathxes_path, class: "btn btn-outline-secondary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- 検索フォーム2 -->
+<div class="card shadow mt-3">
+  <div class="card-header">
+    <%= icon_with_text("search", "検索条件") %>
+  </div>
+
+  <div class="card-body">
+    <%= search_form_for(
+         @q, url: searchb_pathxes_path,
+        html: {
+          method: :post,
+          data: {
+            turbo_frame: "pathxs-list3"
+          }
+       } ) do |f| %>
+      <div class="row g3 mb-3">
+        <div class="col-4 col-xl-2">
+          <%= f.label :path_cont, "Path", class: "form-label" %>
+          <%= f.search_field :path_cont, class: "form-control" %>
+        </div>
+        <div class="col-4 col-xl-2">
+          <%= f.label :last_item_cont, "last_item", class: "form-label" %>
+          <%= f.search_field :last_item_cont, class: "form-control" %>
+        </div>
+         <div class="col-4 d-flex align-items-end">
+          <%= button_tag(icon_with_text("search", "検索"), class: "btn btn-primary me-1") %>
+          <%= link_to "リセット", pathxes_path, class: "btn btn-outline-secondary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- 一覧 -->
+<div class="card shadow mt-3">
+  <div class="card-header">
+    <%= icon_with_text("table", "一覧") %>
+  </div>
+
+  <div class="card-body mx-3">
+    <%= turbo_frame_tag "pathxs-list2" do %>
+    <% end %>
+  <p>1</p>
+
+    <%= turbo_frame_tag "pathxs-list3" do %>
+    <% end %>
+  <p>2</p>
+
+    <%= turbo_frame_tag "pathxs-list" do %>
+      <div class="row py-2">
+        <div class="col-4 mt-auto">
+          <%= sort_link(@q, :path) %>
+        </div>
+        <div class="col-4 mt-auto">
+          <%= sort_link(@q, :last_item) %>
+        </div>
+        <div class="col-4 d-flex justify-content-end">
+          <%= link_to icon_with_text("plus-circle", "登録"),
+                      new_pathxb_path,
+                      class: "btn btn-outline-primary",
+                      data: { turbo_frame: dom_id(Pathx.new) }
+          %>
+        </div>
+      </div>
+
+      <p>3 before new</p>
+      <%= turbo_frame_tag Pathx.new %>
+
+      <p>4 after new</p>
+      <p>4-A pathxs</p>
+      <div id="pathxs">
+        <%= render @pathxes %>
+      </div>
+
+      <p>5 before paginate</p>
+      <div class="d-flex justify-content-end mt-3">
+        <%= paginate @pathxes %>
+      </div>
+      <p>6 after paginate</p>
+    <% end %>
+      <p>7</p>
+  </div>
+</div>

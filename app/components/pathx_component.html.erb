@@ -1,0 +1,7 @@
+<div id="<%= helpers.dom_id @proxy %>">
+    
+  <p>
+    [<%= @proxy.id %>]<%= @proxy.path %>
+  </p>
+  <%= render BookmarklistComponent.new(proxy: @proxy.bookmarks, proxy_klass: BookmarkComponent) %>
+</div>

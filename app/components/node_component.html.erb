@@ -1,0 +1,14 @@
+<li>
+        <%= helpers.link_to(@last_name, {
+              controller: "pathxes", action: "index", idx: @idx,
+              level: @level,
+              data: { turbo_stream: true },
+            }) %>
+</li>
+<% if @children.size > 0 %>
+<ul>
+<% @children.each do |node_component| %>
+<%= render node_component %>
+<% end %>
+</ul>
+<% end %>

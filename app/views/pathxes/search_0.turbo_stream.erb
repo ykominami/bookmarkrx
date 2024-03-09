@@ -1,0 +1,8 @@
+<%= turbo_stream.update "pathxs-list2" do %>
+  <% @pathxss.each do |pathxs| %>
+    <%= render partial: "pathxes/pathx",
+              locals: { pathx: pathxs } %>
+  <% end %>
+<% end %>
+
+

@@ -1,0 +1,15 @@
+<div id="<%= dom_id pathx %>">
+    
+  <p>
+    [<%= pathx.id %>]<%= pathx.path %>
+  </p>
+  <% if pathx.bookmarks.size > 0 %>
+    <ul>
+    <% pathx.bookmarks.each do |bookmark| %>
+    <li>
+      <a href="<%= bookmark.href %>"><%= bookmark.desc %></a>
+    </li>
+    <% end %>
+    </ul>
+  <% end %>
+</div>

@@ -1,0 +1,2 @@
+class HierxfixersImporters < BasefixerImporters
+end

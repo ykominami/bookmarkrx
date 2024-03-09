@@ -1,0 +1,12 @@
+<div class="sign_up_page">
+  <div class="sign_up_form">
+    <h2>サインinページ</h2>
+    <%= form_with model: @user, url: sign_in_process_path, local: true do |f| %>
+      <%= f.text_field :name, placeholder: "ユーザー名" %>
+      <%= f.email_field :email, placeholder: "メールアドレス" %>
+      <%= f.password_field :password, placeholder: "パスワード" %>
+      <button>サインin</button>
+      <p>ユーザーmi登録の方は<%= link_to "サインupへ", sign_up_path %></p>
+    <% end %>
+  </div>
+</div>

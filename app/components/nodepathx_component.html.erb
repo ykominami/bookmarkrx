@@ -1,0 +1,12 @@
+<li>
+        <%= helpers.link_to(@last_name, pathx_path(@idx),
+                            controller: "pathxes", action: "index",
+                            data: { turbo_stream: true }) %>
+</li>
+<% if @children.size > 0 %>
+<ul class="nested active" >
+<% @children.each do |node_component| %>
+<%= render node_component %>
+<% end %>
+</ul>
+<% end %>

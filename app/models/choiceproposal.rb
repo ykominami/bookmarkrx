@@ -1,0 +1,2 @@
+class Choiceproposal < ApplicationRecord
+end

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Hierxes</h1>
+
+<div id="hierxes">
+  <% @hierxes.each do |hierx| %>
+    <%= render hierx %>
+    <p>
+      <%= link_to "Show this hierx", hierx %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New hierx", new_hierx_path %>

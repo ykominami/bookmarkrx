@@ -1,0 +1,2 @@
+class Proposer < ApplicationRecord
+end

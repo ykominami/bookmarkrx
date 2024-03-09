@@ -1,0 +1,4 @@
+<%= turbo_stream.update "bookmark-list" do %>
+  <%= render partial: "pathxes/pathx",
+             locals: { pathx: @pathx } %>
+<% end %>

@@ -1,0 +1,32 @@
+<%= form_with(model: pathx) do |form| %>
+  <% if pathx.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(pathx.errors.count, "error") %> prohibited this pathx from being saved:</h2>
+
+      <ul>
+        <% pathx.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :idx, style: "display: block" %>
+    <%= form.number_field :idx %>
+  </div>
+
+  <div>
+    <%= form.label :path, style: "display: block" %>
+    <%= form.text_field :path %>
+  </div>
+
+  <div>
+    <%= form.label :last_item, style: "display: block" %>
+    <%= form.text_field :last_item %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

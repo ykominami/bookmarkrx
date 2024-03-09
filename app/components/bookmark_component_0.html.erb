@@ -1,0 +1,33 @@
+<p>
+<%= helpers.link_to(@desc, @href) %>
+</p>
+<p>
+<%= helpers.url_for(@proxy) %>
+</p>
+<p>
+絶対URL-symmbo-<%= helpers.url_for(action: :show2, only_path: false) %>
+</p>
+<p>
+絶対URL-文字列-<%= helpers.url_for(action: "show2", only_path: false) %>
+</p>
+<p>
+その他オプション-<%= helpers.url_for(controller: :pathxes, action: "show2", charset: "utf-8", anchor: "top") %>
+</p>
+<p>
+ドメイン指定-<%= helpers.url_for(domain: "wings.msn.to", subdomain: "www2", controller: :pathxes, action: "show2", charset: "utf-8", anchor: "top", only_path: false) %>
+</p>
+<p>
+オブジェクト-<%= helpers.url_for(Pathx.find(100)) %>
+</p>
+<p>
+urlヘルパー-<%= helpers.url_for(helpers.pathx_path(1)) %>
+</p>
+<p>
+もでるそのもの-<%= helpers.url_for(Pathx) %>
+</p>
+<p>
+文字列そのもの-<%= helpers.url_for("https://wings.msn.to/") %>
+</p>
+<p>
+特殊値:Back-<%= helpers.url_for(:back) %>
+</p>

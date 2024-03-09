@@ -1,0 +1,17 @@
+<p>
+<%= url_for(user) %>
+</p>
+<p>
+<%= url_for("/users/1?frame_id=1") %>
+</p>
+<p>
+<%= url_for(controller: :users, action: :show, params: { frame_id: 1 }) %>
+</p>
+<p>
+<%= url_for(update_user_path(user, "frame_1")) %>
+</p>
+
+<%= form_with(model: @user, local: true) do |f| %>
+  <%= f.file_field(:upload_file) %>
+  <button>この内容で設定</button>
+<% end %>

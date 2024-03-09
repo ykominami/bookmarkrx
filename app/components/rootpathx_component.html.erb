@@ -1,0 +1,16 @@
+<div class="inline ">
+<turbo-frame id="category-list" class="col-auto left-side overflow-auto"       %>
+<% if @children.size > 0 %>
+<ul class="nested active">
+<% else %>
+<ul class="caret active">
+<% end %>
+
+  <% @children.each do |child_node| %>
+    <%= render child_node %>
+  <% end %>
+</ul>
+</turbo-frame>
+<turbo-frame id="bookmark-list" class="col-auto right-side overflow-auto"       %>
+</turbo-frame>
+</div>

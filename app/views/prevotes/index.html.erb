@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Prevotes</h1>
+
+<div id="prevotes">
+  <% @prevotes.each do |prevote| %>
+    <%= render prevote %>
+    <p>
+      <%= link_to "Show this prevote", prevote %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New prevote", new_prevote_path %>

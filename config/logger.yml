@@ -1,0 +1,15 @@
+level: debug
+# level: info
+# level: warning
+# level: error
+# level: fatal
+# level: unknown
+#
+stdout_flag: true
+# stdout_flag: false
+log_dir: log
+fname: default
+fname: false
+fname: abc
+prefix: log_
+

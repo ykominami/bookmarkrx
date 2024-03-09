@@ -1,0 +1,8 @@
+<%= turbo_frame_tag @frame_id do %>
+  <% if @pathxss %>
+    <%= render @pathxss %>
+    <%= paginate @pathxss %>
+  <% else %>
+    <%= Date.new %>
+  <% end %>
+<% end %>

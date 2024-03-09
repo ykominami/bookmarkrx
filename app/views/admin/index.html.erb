@@ -1,0 +1,4 @@
+<%= form_with(model: @user, url: update_user_path(user_in_session), local: true) do |f| %>
+  <%= f.file_field(:upload_file) %>
+  <button>この内容で設定</button>
+<% end %>

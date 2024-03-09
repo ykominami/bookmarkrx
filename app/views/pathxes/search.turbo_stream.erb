@@ -1,0 +1,8 @@
+<%= turbo_stream.update "pathxs-list2" do %>
+  <% if @pathxss %>
+    <%= render @pathxss %>
+    <%= paginate @pathxss %>
+  <% else %>
+    <%= Date.new %>
+  <% end %>
+<% end %>

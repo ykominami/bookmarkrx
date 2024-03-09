@@ -1,0 +1,9 @@
+<% if @proxy.size > 0 %>
+  <ul>
+  <% @proxy.each do |bookmark| %>
+  <li>
+    <%= render @proxy_klass.new(proxy: bookmark) %> 
+  </li>
+  <% end %>
+  </ul>
+<% end %>

@@ -1,0 +1,14 @@
+<%= turbo_stream.update "category-hier" do %>
+  <%= render partial: "tasks/category-hier",
+             locals: { task: @task } %>
+<% end %>
+
+<%= turbo_stream.update "sub-category-list" do %>
+  <%= render partial: "tasks/sub-category-list",
+             locals: { task: @task } %>
+<% end %>
+
+<%= turbo_stream.update "bookmark-list" do %>
+  <%= render partial: "tasks/bookmark-list",
+             locals: { task: @task } %>
+<% end %>

@@ -1,0 +1,2 @@
+module ChoiceproposalsHelper
+end

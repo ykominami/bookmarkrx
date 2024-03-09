@@ -1,0 +1,2 @@
+class Prevote < ApplicationRecord
+end

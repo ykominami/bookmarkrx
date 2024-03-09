@@ -1,0 +1,35 @@
+<p style="color: green"><%= notice %></p>
+<%= render RootComponent.new(name: "", hier: @hier) %>
+
+<h1>Pathxes</h1>
+<%= link_to pathxes_path,
+            data: { turbo_stream: true } %><br>
+<% idx = 100 %>
+<% pathxa = Pathx.find_by(idx: idx) %>
+<%= link_to pathxa %><br>
+<%= link_to "PATHX", {
+              controller: "pathxes", action: "index",
+              charset: "utf-8",
+              idx: idx,
+              level: 1,
+              data: {
+                turbo_stream: true,
+              },
+            } %><br>
+
+<%= link_to pathxes_path,
+            data: { turbo_stream: true } %><br>
+
+
+<div id="pathxes">
+  <% ary = [] %>
+  <% ary << @pathx %>
+  <% ary.each do |pathx| %>
+    <%= render pathx %>
+    <p>
+      <%= link_to "Show this pathx", pathx %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New pathx", new_pathx_path %>
