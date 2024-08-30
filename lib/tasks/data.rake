@@ -114,7 +114,7 @@ namespace :data do
 
   desc "data import bookmark"
   task "import:bookmark", [:word] do |_, args|
-    LIN_YAML = "link.yaml"
+    LINK_YAML = "link.yaml"
     puts "data import bookmark"
 
     cfg = LogxUtilxes::Logx.config(path: Rails.root)
